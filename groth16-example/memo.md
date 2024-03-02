@@ -11,4 +11,12 @@ BLS
 prove time:
 verify time:
 
+## proof size
+
+楕円曲線上の点列なので、サーキットのゲート数によってサイズが変わることはないか。
+
+## trusted setup
+
+鍵管理
+
 ## Backend option
