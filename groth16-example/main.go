@@ -40,12 +40,26 @@ func (h constantHash) Size() int                         { return 3 }
 func (h constantHash) BlockSize() int                    { return 32 }
 
 func main() {
-	curve := ecc.BN254
-	assignment := &basicCircuit{X: 1}
-	ccs, _ := frontend.Compile(curve.ScalarField(), r1cs.NewBuilder, &basicCircuit{})
-	pk, vk, _ := groth16.Setup(ccs)
-	witness, _ := frontend.NewWitness(assignment, curve.ScalarField())
-	proof, _ := groth16.Prove(ccs, pk, witness, backend.WithProverHashToFieldFunction(constantHash{}))
-	pubWitness, _ := witness.Public()
-	_ = groth16.Verify(proof, vk, pubWitness, backend.WithVerifierHashToFieldFunction(constantHash{}))
+	{
+		curve := ecc.BN254
+		assignment := &basicCircuit{X: 1}
+		ccs, _ := frontend.Compile(curve.ScalarField(), r1cs.NewBuilder, &basicCircuit{})
+		pk, vk, _ := groth16.Setup(ccs)
+		witness, _ := frontend.NewWitness(assignment, curve.ScalarField())
+		proof, _ := groth16.Prove(ccs, pk, witness, backend.WithProverHashToFieldFunction(constantHash{}))
+		pubWitness, _ := witness.Public()
+		_ = groth16.Verify(proof, vk, pubWitness, backend.WithVerifierHashToFieldFunction(constantHash{}))
+	}
+
+	{
+		curve := ecc.BLS12_381
+		assignment := &basicCircuit{X: 1}
+		ccs, _ := frontend.Compile(curve.ScalarField(), r1cs.NewBuilder, &basicCircuit{})
+		pk, vk, _ := groth16.Setup(ccs)
+		witness, _ := frontend.NewWitness(assignment, curve.ScalarField())
+		proof, _ := groth16.Prove(ccs, pk, witness, backend.WithProverHashToFieldFunction(constantHash{}))
+		pubWitness, _ := witness.Public()
+		_ = groth16.Verify(proof, vk, pubWitness, backend.WithVerifierHashToFieldFunction(constantHash{}))
+	}
+
 }
