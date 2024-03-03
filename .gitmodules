@@ -1,0 +1,4 @@
+
+[submodule "groth16-example-with-rapidsnark/rapidsnark"]
+	path = groth16-example-with-rapidsnark/rapidsnark
+	url = https://github.com/iden3/rapidsnark.git
