@@ -1,0 +1,4 @@
+github.com/iden3/go-rapidsnark/prover v0.0.10 h1:NvOfRPpex/k646UsqOcUy7a7uVl17t4ok9kWvpQg4+k=
+github.com/iden3/go-rapidsnark/prover v0.0.10/go.mod h1:wgDsmKOGCuWGtgVtuW9ARWNguNr4NJAIyg2G7+uTax0=
+github.com/iden3/go-rapidsnark/types v0.0.2 h1:CjJSrlbWchHzuMRdxSYrEh7n/akP+Z2PLNbwT5yBmQY=
+github.com/iden3/go-rapidsnark/types v0.0.2/go.mod h1:ApgcaUxKIgSRA6fAeFxK7p+lgXXfG4oA2HN5DhFlfF4=
