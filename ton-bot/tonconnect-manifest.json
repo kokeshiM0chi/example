@@ -1,0 +1,6 @@
+{
+  "url": "https://t.me/ton_sample_bot",                        // required
+  "name": "ton_sample_bot",                      // required
+  "iconUrl": "https://github.com/kokeshiM0chi/example/blob/main/bot-icon/night-creamsoda.png"               // required
+}
+
